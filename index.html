@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Love You</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(to bottom, #ffcccc, #ff99cc);
+            font-family: 'Pacifico', cursive;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            position: relative;
+            color: #FF1493;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            font-size: 3em;
+            position: relative;
+            z-index: 1;
+            animation: popIn 1s ease-out forwards;
+            opacity: 0;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        @keyframes popIn {
+            0% { transform: scale(0); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .rose {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-image: url('Python-course/for%20her/1000_F_180285765_uUOJ0M3wFuiigaDPJ7m94MQyXliABqjw.jpg');
+            background-size: cover;
+            opacity: 0;
+            animation: fadeIn 1s ease-out forwards, float 3s ease-in-out infinite;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: scale(0); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .rose:nth-child(2) { top: 10%; left: 15%; animation-delay: 0.5s; }
+        .rose:nth-child(3) { top: 20%; right: 20%; animation-delay: 1s; }
+        .rose:nth-child(4) { top: 50%; left: 5%; animation-delay: 1.5s; }
+        .rose:nth-child(5) { top: 75%; right: 15%; animation-delay: 2s; }
+        .rose:nth-child(6) { top: 30%; left: 50%; animation-delay: 2.5s; }
+        .rose:nth-child(7) { bottom: 20%; right: 30%; animation-delay: 3s; }
+
+        .heart {
+            font-size: 8em;
+            color: red;
+            position: absolute;
+            bottom: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            animation: fadeIn 1s ease-out forwards, heartBeat 1s infinite;
+            animation-delay: 3.5s;
+        }
+
+        @keyframes heartBeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        .share-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.5em;
+            background-color: #FF1493;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none;
+        }
+
+        .share-button:hover {
+            background-color: #FF69B4;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 20px;
+            text-align: center;
+            color: white;
+            font-size: 1.2em;
+            z-index: 1;
+        }
+
+        .typewriter {
+            overflow: hidden;
+            border-right: .15em solid #FF1493; 
+            white-space: nowrap;
+            margin: 0 auto; 
+            letter-spacing: .15em; 
+            animation: typing 4s steps(30, end), blink-caret .75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 15em; }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #FF1493; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">I Love You</div>
+
+    <div class="rose"></div>
+    <div class="rose"></div>
+    <div class="rose"></div>
+    <div class="rose"></div>
+    <div class="rose"></div>
+    <div class="rose"></div>
+
+    <div class="heart">❤️</div>
+
+    <div class="typewriter">Always and Forever...</div>
+
+    <a href="#" class="share-button">Share Your Love!</a>
+
+    <footer>
+        "Love is all you need. But i have you so you are all i need"
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/canvas-confetti/1.4.0/confetti.browser.min.js"></script>
+    <script>
+        
+        window.onload = function() {
+            confetti();
+        };
+    </script>
+</body>
+</html>
